@@ -1,12 +1,20 @@
 import 'package:evently_hti_sun/config/theme/theme_manager.dart';
 import 'package:evently_hti_sun/core/resources/routes_manager.dart';
 import 'package:evently_hti_sun/l10n/app_localizations.dart';
+import 'package:evently_hti_sun/providers/language_provider.dart';
+import 'package:evently_hti_sun/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 void main(){
-  runApp(const Evently());
+  runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context)=> ThemeProvider()),
+        ChangeNotifierProvider(create: (context)=> LanguageProvider()),
+      ],
+      child: const Evently()));
 }
 
 class Evently extends StatelessWidget {
@@ -14,6 +22,8 @@ class Evently extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var themeProvider = Provider.of<ThemeProvider>(context);
+    var languageProvider = Provider.of<LanguageProvider>(context);
     return ScreenUtilInit(
       designSize: Size(393, 841),
       minTextAdapt: true,
@@ -24,8 +34,8 @@ class Evently extends StatelessWidget {
         initialRoute: RoutesManager.mainLayout,
         theme: ThemeManager.light,
         darkTheme: ThemeManager.dark,
-        themeMode: ThemeMode.light,
-        locale: Locale("en"),
+        themeMode: themeProvider.currentTheme,
+        locale: Locale(languageProvider.currentLang),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: [
           Locale('en'), // English

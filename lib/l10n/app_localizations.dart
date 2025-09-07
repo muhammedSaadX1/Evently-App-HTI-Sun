@@ -221,7 +221,7 @@ abstract class AppLocalizations {
   /// No description provided for @light.
   ///
   /// In en, this message translates to:
-  /// **'light'**
+  /// **'Light'**
   String get light;
 
   /// No description provided for @dark.

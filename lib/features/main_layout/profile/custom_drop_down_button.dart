@@ -5,10 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../core/resources/colors_manager.dart';
 
 class CustomDropDownButton extends StatelessWidget {
-  const CustomDropDownButton({super.key, required this.label, required this.selectedItem, required this.menuItems});
+  const CustomDropDownButton({super.key, required this.label, required this.selectedItem, required this.menuItems, required this.onChange});
  final  String label;
  final String selectedItem;
  final List<String> menuItems;
+ final void Function(String?)onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +38,10 @@ class CustomDropDownButton extends StatelessWidget {
                   items: menuItems.map((value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value),
+                      child: Text(value, style: TextStyle(color: ColorsManager.black),),
                     );
                   }).toList(),
-                  onChanged: (selectedItem) {
-                    print(selectedItem);
-                  },
+                  onChanged:onChange,
                 )
 
               ],
