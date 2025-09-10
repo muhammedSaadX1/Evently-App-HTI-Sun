@@ -78,7 +78,7 @@ class ProfileTab extends StatelessWidget {
 
         onChange: (newLang){
           print(newLang);
-          languageProvider.changeCurrentLang(newLang == "English"? "en" : "ar");
+          languageProvider.changeAppLang(newLang == "English"? "en" : "ar");
         },
         ),
         Spacer(flex: 7),

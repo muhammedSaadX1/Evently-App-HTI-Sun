@@ -1,6 +1,6 @@
 import 'package:evently_hti_sun/core/resources/assets_manager.dart';
 import 'package:evently_hti_sun/core/resources/colors_manager.dart';
-import 'package:evently_hti_sun/models/event_mode.dart';
+import 'package:evently_hti_sun/models/event_model.dart' show EventModel;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';

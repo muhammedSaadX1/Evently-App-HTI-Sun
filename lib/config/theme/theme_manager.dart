@@ -8,7 +8,7 @@ class ThemeManager {
     useMaterial3: false,
 
     primaryColor: ColorsManager.blue,
-    iconTheme: IconThemeData(color: ColorsManager.black),
+    iconTheme: IconThemeData(color: ColorsManager.white),
     appBarTheme: AppBarTheme(
       backgroundColor: ColorsManager.whiteBlue,
       foregroundColor: ColorsManager.blue,
@@ -116,7 +116,7 @@ labelMedium: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 20.sp, col
       useMaterial3: false,
 
       primaryColor: ColorsManager.darkBlue,
-      iconTheme: IconThemeData(color: ColorsManager.white),
+      iconTheme: IconThemeData(color: ColorsManager.ofWhite),
       appBarTheme: AppBarTheme(
         backgroundColor: ColorsManager.darkBlue,
         foregroundColor: ColorsManager.blue,

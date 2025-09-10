@@ -4,7 +4,7 @@ import 'package:evently_hti_sun/core/widgets/event_item.dart';
 import 'package:evently_hti_sun/l10n/app_localizations.dart';
 import 'package:evently_hti_sun/l10n/app_localizations_ar.dart';
 import 'package:evently_hti_sun/models/category_model.dart';
-import 'package:evently_hti_sun/models/event_mode.dart';
+import 'package:evently_hti_sun/models/event_model.dart' show EventModel;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

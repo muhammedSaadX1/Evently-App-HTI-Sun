@@ -6,8 +6,10 @@ import 'package:evently_hti_sun/core/widgets/custom_text_button.dart';
 import 'package:evently_hti_sun/core/widgets/custom_text_form_field.dart';
 import 'package:evently_hti_sun/l10n/app_localizations.dart';
 import 'package:evently_hti_sun/models/category_model.dart';
+import 'package:evently_hti_sun/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class CreateEvent extends StatefulWidget {
   const CreateEvent({super.key});
@@ -38,6 +40,7 @@ class _CreateEventState extends State<CreateEvent> {
   @override
   Widget build(BuildContext context) {
    AppLocalizations appLocalizations = AppLocalizations.of(context)!;
+   ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(title: Text(appLocalizations.create_event)),
       body: Padding(
@@ -85,7 +88,7 @@ class _CreateEventState extends State<CreateEvent> {
               SizedBox(height: 16,),
               Row(
                 children: [
-                  Icon(Icons.date_range,),
+                  Icon(Icons.date_range,color: themeProvider.isDarkEnabled ? ColorsManager.ofWhite : ColorsManager.black,),
                   SizedBox(width: 4,),
                   Text(appLocalizations.event_date, style: Theme.of(context).textTheme.headlineMedium,),
                 Spacer(),
@@ -98,7 +101,7 @@ class _CreateEventState extends State<CreateEvent> {
               SizedBox(height: 18.h,),
               Row(
                 children: [
-                  Icon(Icons.access_time, ),
+                  Icon(Icons.access_time,color: themeProvider.isDarkEnabled ? ColorsManager.ofWhite : ColorsManager.black, ),
                   SizedBox(width: 4,),
                   Text(appLocalizations.event_time, style: Theme.of(context).textTheme.headlineMedium,),
                 Spacer(),
